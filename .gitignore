@@ -1,0 +1,10 @@
+.DS_STORE
+*.mat
+*.fig
+*.tiff
+*.tif
+*.pdf
+*.jpg
+*.png
+*.nii
+*.nii.gz
