@@ -1,5 +1,6 @@
+addpath('./subsrc/');
 comptID = 1;               %1: PC for BCI, 2:PC for PsychoTB
-devname = {'Dev2';'DevX'}; %6F
+devname = {'Dev2';'Dev2'}; %6F
 devID   = devname{comptID};
 setPara_DAQ;
 %% initialize_DO

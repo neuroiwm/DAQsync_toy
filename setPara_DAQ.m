@@ -20,6 +20,7 @@ OutputSignal_alt=...
     0,5,5,5;...
     5,5,5,5;]; % DIN1~7 (Simulataneously Send to DI0 on DAQ2)
 
+reflesh = [0 0 0 0];
 switch comptID
     case 1
         sendQue2AnotherDAQ      = [0 0 0 5]; % for DAQ1
