@@ -1,5 +1,9 @@
 addpath('./subsrc/');
-offCaution;
+try
+    offCaution;
+catch
+    startup_iwm;
+end
 
 comptID = 1;               %1: PC for BCI, 2:PC for PsychoTB
 devname = {'Dev2';'Dev2'}; %6F
