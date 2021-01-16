@@ -7,7 +7,7 @@ fwrite(fid1,data','double');
 %%% detectInput
 [pks,loc]             = findpeaks(data(:,2),'MinPeakProminence',3);
 if ~isempty(pks)
-    fwrite(fid2,loc(1),'double');
+    fwrite(fid2,timestamps(loc(1)),'double');
     if comptID == 2
         %%% psychoPC replies DIN from PC1
         Wrapper('sendNSandDAQ_Evt');

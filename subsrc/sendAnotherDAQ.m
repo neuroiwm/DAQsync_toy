@@ -1,9 +1,9 @@
 try
-    D_out.write(OutputSignal_alt(:,:,din));
+    D_out.write(sendQue2AnotherDAQ);
     D_out.start();
 catch
     fprintf('delayed\n')
     pause(0.1);
-    D_out.write(OutputSignal_alt(:,:,din));
+    D_out.write(sendQue2AnotherDAQ);
     D_out.start();
 end

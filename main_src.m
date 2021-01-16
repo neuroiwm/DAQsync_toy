@@ -3,6 +3,7 @@ try
     offCaution;
 catch
     startup_iwm;
+    offCaution;
 end
 
 comptID = 1;               %1: PC for BCI, 2:PC for PsychoTB
@@ -16,7 +17,13 @@ D_out.write(refleshDIN);
 D_out.start();
 %% initialize_DI
 D_in = daq('ni');
-D_in.addinput(devID,2,'Voltage');
+switch comptID
+    case 1
+        D_in.addinput(devID,2,'Voltage');
+    case 2
+        D_in.addinput(devID,0,'Voltage');
+end
+
 D_in.Rate = Fs_DAQ;
 
 for i_ch = 1 : size(D_in.Channels,2)
@@ -28,7 +35,6 @@ fid1                        = fopen(sprintf('DAQsync_%s_%s.bin',devID,expstr),'w
 fid2                        = fopen(sprintf('DAQlog_%s_%s.bin',devID,expstr),'w');
 D_in.ScansAvailableFcn      = @(src,evt) backFunc(src,evt,fid1,fid2,comptID);
 D_in.ScansAvailableFcnCount = 100;
-%D_in.ScansRe = 100;
 start(D_in,"Continuous");
 %% GUI
 close all
