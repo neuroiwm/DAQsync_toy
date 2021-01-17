@@ -31,8 +31,8 @@ for i_ch = 1 : size(D_in.Channels,2)
 end
 
 expstr                      = datenow();
-fid1                        = fopen(sprintf('DAQsync_%s_%s.bin',devID,expstr),'w');
-fid2                        = fopen(sprintf('DAQlog_%s_%s.bin',devID,expstr),'w');
+fid1                        = fopen(sprintf('DAQsync_%s_%s.bin',devID,expstr),'w+');
+fid2                        = fopen(sprintf('DAQlog_%s_%s.bin',devID,expstr),'w+');
 D_in.ScansAvailableFcn      = @(src,evt) backFunc(src,evt,fid1,fid2,comptID);
 D_in.ScansAvailableFcnCount = 100;
 start(D_in,"Continuous");

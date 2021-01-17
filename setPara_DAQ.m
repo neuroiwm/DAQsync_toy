@@ -22,7 +22,7 @@ OutputSignal_alt=...
 
 OutputSignal     = zeropad(OutputSignal);
 OutputSignal_alt = zeropad(OutputSignal_alt);
-refleshDIN          = zeros(2,4);
+refleshDIN       = zeros(2,4);
 
 switch comptID
     case 1
